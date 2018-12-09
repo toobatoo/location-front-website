@@ -1,0 +1,91 @@
+<div class="container-fluid">
+
+  <div class="row row-navigation">
+    <div class="col-sm-12 col-md-12 col-lg-12 navigation menu">
+      <div class="block-close" (click)='toggleMenu()'>
+        <span><i class="far fa-times-circle"></i></span>
+      </div>
+      <div class="content-link text-center">
+        <div class="link" (click)='toggleMenu()'>DISPONIBILITES</div>
+        <div class="link" (click)="link('/photos')">PHOTOS</div>
+        <div class="link" (click)="link('/description')">DESCRIPTION</div>
+        <div class="link" (click)="link('/tarif')">TARIFS</div>
+        <div class="link" (click)="link('/map')">SITUATION</div>
+        <div class="link" (click)="link('/contact')">CONTACT</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row map">
+    <div class="col-sm-2 col-md-2 col-lg-2 date-select mx-auto">
+      <div class="block-start">
+        <div class="start-title">
+          <span>ARRIVEE</span>
+          <input class="start-input" type="text" value="{{d_start}}" />
+        </div>
+      </div>
+      <hr>
+      <div class="block-end">
+        <div class="end-title">
+          <span>DEPART</span>
+          <input class="end-input" type="text" value={{d_end}} />
+        </div>
+      </div>
+      <div class="text-center">
+        <div class='valid-date' (click)='validDate($event)'>
+          OK
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-9 col-md-9 col-lg-9 ml-auto container-calendar">
+
+      <div class="bloc-logo text-center">
+        <span class="menu button hvr-bounce-out" (click)='toggleMenu()'><i class="fas fa-bars"></i></span>
+        <div>
+          <span><i class="fas fa-bed"></i></span>
+        </div>
+        <span CLASS="booking-available">RESERVATIONS DISPONIBLES DU 1ER MAI AU 30 OCTOBRE 2019</span>
+      </div>
+
+      <div class="month">
+        <ul>
+          <li class="prev" (click)="initMonth('--')">&#10094;</li>
+          <li class="next" (click)="initMonth('++')">&#10095;</li>
+          <li>
+            <span>{{ list_months[ _month ] }}</span><br>
+            <span style="font-size:18px">{{ _year }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <ul class="weekdays">
+        <li>Lun</li>
+        <li>Mar</li>
+        <li>Mer</li>
+        <li>Jeu</li>
+        <li>Ven</li>
+        <li>Sam</li>
+        <li>Dim</li>
+      </ul>
+
+      <ul class="day">
+
+        <li *ngFor="let prevDay of listDaysPrevMonth" class="prevDay">
+          {{prevDay}}
+        </li>
+
+        <li *ngFor="let day of listDays; let i = index">
+          <app-day [day]="day" [forbidden]="isBook[i]" (day_click)='getDayClicked(day, isBook[i])'>
+          </app-day>
+        </li>
+
+        <li *ngFor="let nextDay of listDaysNextMonth" class="nextDay">
+          {{nextDay}}
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>

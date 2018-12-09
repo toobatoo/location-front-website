@@ -1,0 +1,17 @@
+.mobile-v{
+    z-index: 99999999;
+    position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #fa6533;
+  color: white;
+  font-size: .7rem;
+  letter-spacing: 4px;
+  border-radius: 5px;
+  padding: 5px 3px 5px 3px;
+  font-weight: bold;
+  transition: all .2s ease-in-out;
+  cursor: wait;
+}
+.mobile-v:hover { transform: scale(1.1); padding-left: 100px;}

@@ -1,0 +1,16 @@
+<div class='card'>
+  <div class="month">
+    {{month}}
+  </div>
+  <div class="hr">.............</div>
+  <div class="price">
+    €{{price}}
+  </div>
+  <div class="detail">
+    PRIX POUR 1 NUIT
+  </div>
+  <div class="button">
+    <span class='btn btn-sm btn-outline-light' (click)="getPrice(value)">CONSULTER</span>
+    <input type="hidden" value={{value}} />
+  </div>
+</div>

@@ -1,0 +1,111 @@
+<div class="container-fluid">
+  <div class="row row-navigation">
+    <div class="col-sm-12 col-md-12 col-lg-12 navigation menu">
+      <div class="block-close" (click)='toggleMenu()'>
+        <span><i class="far fa-times-circle"></i></span>
+      </div>
+      <div class="content-link text-center">
+        <div class="link" (click)="link('/disponibilites/0/0')">DISPONIBILITES</div>
+        <div class="link" (click)="link('/photos')">PHOTOS</div>
+        <div class="link" (click)="toggleMenu()">DESCRIPTION</div>
+        <div class="link" (click)="link('/tarif')">TARIFS</div>
+        <div class="link" (click)="link('/map')">SITUATION</div>
+        <div class="link" (click)="link('/contact')">CONTACT</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2 left-start" (click)="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-5 col-md-5 col-lg-5 left-start b-left">
+      <table class="table borderless">
+        <tr>
+          <td class="white"><i class="fas fa-map-marker-alt"></i></td>
+          <td class="white">
+            <strong>Adresse</strong>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="sub-white top-1">19 Résidence horizon marin</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="sub-white bottom-3">33 680 Lacanau</td>
+        </tr>
+
+        <tr>
+          <td class="white"><i class="fas fa-phone"></i></td>
+          <td class="white">
+            <strong>Téléphone</strong>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="sub-green top-1 bottom-3">+33 7 60 03 76 72</td>
+        </tr>
+
+        <tr>
+          <td class="white"><i class="far fa-envelope"></i></td>
+          <td class="white">
+            <strong>Mail</strong>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="sub-green top-1 e-mail">
+            <a href="mailto:sebastien@hotmail.fr?subject=Location studio&body=Bonjour,">
+              sebastien.chappert@hotmail.fr
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-sm-5 col-md-5 col-lg-5  left-start b-right">
+      <form>
+        <table class="table borderless">
+
+          <tr>
+            <td>
+              <input class="input" required ngModel type="text" #nom="ngModel" placeholder="Nom" name="nom" />
+              <div class="alert alert-danger" *ngIf="nom.touched && !nom.valid">Votre nom est obligatoire.</div>
+            </td>
+            <td>
+              <input class="input" required ngModel type="text" #prenom="ngModel" placeholder="Prénom" name="prenom" />
+              <div class="alert alert-danger" *ngIf="prenom.touched && !prenom.valid">Votre prénom est obligatoire.</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input class="input" required ngModel type="email" #mail="ngModel" placeholder="Mail" name="mail" />
+              <div class="alert alert-danger" *ngIf="mail.touched && !mail.valid">Votre mail est obligatoire.</div>
+              <div class="alert alert-danger" *ngIf="!hideErrorMail">Veuillez saisir un bon
+                format de mail.</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <textarea class="input" required ngModel name="msg" #msg="ngModel" id="" cols="30" rows="10" placeholder="Message"></textarea>
+              <div class="alert alert-danger" *ngIf="msg.touched && !msg.valid">Veuillez écrire un message.</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="button hvr-sweep-to-right" (click)="submit(nom, prenom, mail, msg)">Envoyer</span>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="info-icon">
+    <i class="fas fa-envelope"></i>
+  </div>
+
+</div>

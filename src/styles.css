@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: #eaeaea;
+}
+@font-face {
+    font-family: 'loves';
+    src: url('assets/fonts/loves.ttf');
+}
+@font-face {
+    font-family: 'made_evolve';
+    src: url('assets/fonts/MADE_Evolve_Sans_Bold.otf');
+}
+@font-face {
+    font-family: 'OpenSans_Regular';
+    src: url('assets/fonts/OpenSans-Regular.ttf');
+}
+@font-face {
+    font-family: 'OpenSans_Bold';
+    src: url('assets/fonts/OpenSans-Bold.ttf');
+}
+@font-face {
+    font-family: 'OpenSans_Light';
+    src: url('assets/fonts/OpenSans-Light.ttf');
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

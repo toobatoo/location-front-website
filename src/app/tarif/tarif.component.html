@@ -1,0 +1,88 @@
+<div class="container-fluid">
+  <div class="row row-navigation">
+    <div class="col-sm-12 col-md-12 col-lg-12 navigation menu">
+      <div class="block-close" (click)='toggleMenu()'>
+        <span><i class="far fa-times-circle"></i></span>
+      </div>
+      <div class="content-link text-center">
+        <div class="link" (click)="link('/disponibilites/0/0')">DISPONIBILITES</div>
+        <div class="link" (click)="link('/photos')">PHOTOS</div>
+        <div class="link" (click)="link('/description')">DESCRIPTION</div>
+        <div class="link" (click)="toggleMenu()">TARIFS</div>
+        <div class="link" (click)="link('/map')">SITUATION</div>
+        <div class="link" (click)="link('/contact')">CONTACT</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-1 col-md-1 col-lg-1 left-start" (click)="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="col-sm-11 col-md-11 col-lg-11 app-card">
+      <table class="table">
+        <tr>
+          <td class="text-center">
+            <app-card [month]="listMonths[0]" [price]="listTarifs[0]?.price" [value]="listTarifs[0]?.month" (emitPrice)="goDisponibilites($event)"></app-card>
+          </td>
+          <td class="text-center">
+            <app-card [month]="listMonths[1]" [price]="listTarifs[1]?.price" [value]="listTarifs[1]?.month" (emitPrice)="goDisponibilites($event)"></app-card>
+          </td>
+          <td class="text-center">
+            <app-card [month]="listMonths[2]" [price]="listTarifs[2]?.price" [value]="listTarifs[2]?.month" (emitPrice)="goDisponibilites($event)"></app-card>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-center">
+            <app-card [month]="listMonths[3]" [price]="listTarifs[3]?.price" [value]="listTarifs[3]?.month" (emitPrice)="goDisponibilites($event)"></app-card>
+          </td>
+          <td class="text-center">
+            <app-card [month]="listMonths[4]" [price]="listTarifs[4]?.price" [value]="listTarifs[4]?.month" (emitPrice)="goDisponibilites($event)"></app-card>
+          </td>
+          <td class="text-center">
+            <app-card [month]="listMonths[5]" [price]="listTarifs[5]?.price" [value]="listTarifs[5]?.month" (emitPrice)="goDisponibilites($event)"></app-card>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="text-center">
+            <app-card [month]="listMonths[6]" [price]="listTarifs[6]?.price" [value]="listTarifs[6]?.month" (emitPrice)="goDisponibilites($event)"></app-card>
+          </td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!--<div class="row justify-content-sm-center justify-content-md-center justify-content-lg-center">
+    <div class="col-sm-3 col-md-3 col-lg-3 app-card">
+      <app-card [month]="listMonths[0]" [price]="listTarifs[0]?.price" [value]="listTarifs[0]?.month" (emitPrice)="goDisponibilites($event)"></app-card>
+    </div>
+    <div class="col-sm-3 col-md-3 col-lg-3 app-card">
+      <app-card [month]="listMonths[1]" [price]="listTarifs[1]?.price" [value]="listTarifs[1]?.month" (emitPrice)="goDisponibilites($event)"></app-card>
+    </div>
+    <div class="col-sm-3 col-md-3 col-lg-3 app-card">
+      <app-card [month]="listMonths[2]" [price]="listTarifs[2]?.price" [value]="listTarifs[2]?.month" (emitPrice)="goDisponibilites($event)"></app-card>
+    </div>
+  </div>
+
+  <div class="row justify-content-sm-center justify-content-md-center justify-content-lg-center">
+    <div class="col-sm-3 col-md-3 col-lg-3 app-card">
+      <app-card [month]="listMonths[3]" [price]="listTarifs[3]?.price" [value]="listTarifs[3]?.month" (emitPrice)="goDisponibilites($event)"></app-card>
+    </div>
+    <div class="col-sm-3 col-md-3 col-lg-3 app-card">
+      <app-card [month]="listMonths[4]" [price]="listTarifs[4]?.price" [value]="listTarifs[4]?.month" (emitPrice)="goDisponibilites($event)"></app-card>
+    </div>
+    <div class="col-sm-3 col-md-3 col-lg-3 app-card">
+      <app-card [month]="listMonths[5]" [price]="listTarifs[5]?.price" [value]="listTarifs[5]?.month" (emitPrice)="goDisponibilites($event)"></app-card>
+    </div>
+  </div>
+
+  <div class="row justify-content-sm-center justify-content-md-center justify-content-lg-center">
+    <div class="col-sm-3 col-md-3 col-lg-3 app-card">
+      <app-card [month]="listMonths[6]" [price]="listTarifs[6]?.price" [value]="listTarifs[6]?.month" (emitPrice)="goDisponibilites($event)"></app-card>
+    </div>
+  </div>
+  -->
+
+</div>

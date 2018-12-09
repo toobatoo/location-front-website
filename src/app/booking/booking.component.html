@@ -1,0 +1,109 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-3 col-lg-3 ml-auto block-dates">
+      <div class="title-tab text-center">
+        <span>LISTE DES DATES</span>
+      </div>
+      <table class="table table-bordered">
+        <tr>
+          <td class="text-center block-price">
+            <span class="price">{{price}}.00 €</span>
+          </td>
+
+          <td class="text-center">
+            <div>
+              <span class="btn btn-outline-info btn-sm" (click)='checkedAll()'>Tout cocher</span>
+            </div>
+            <div>
+              <span class="btn btn-outline-secondary btn-sm">
+                <a class="btn-annule" href="/disponibilites/0/0">Annuler</a>
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr *ngFor='let booking of bookingList'>
+          <td class="text-center td-date" [ngClass]="{'forbidden': booking.type=='OFF'}">{{ booking.date }}</td>
+          <td class="text-center">
+            <input type="hidden" value='{{ booking.id }}' />
+            <input class="check-date" type="checkbox" value='{{ booking.price }}' (click)='dateIsChecked($event, booking)'
+              [disabled]="booking.type=='OFF'" [checked]="checked && booking.type=='ON'">
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-sm-3 col-md-3 col-lg-3 mr-auto block-form">
+
+      <form [formGroup]="bookingForm">
+
+        <div class="col title-tab text-center">
+          <span>INFORMATIONS</span>
+        </div>
+
+        <hr class='hr'>
+        <div class="col title-errors">
+          <div class="error">*Champs obligatoires</div>
+        </div>
+
+
+        <div class="form-row block-civilite">
+          <div class="col">
+            <select formControlName="civilite" class="form-control form-control-sm" required>
+              <option selected>Civilté</option>
+              <option *ngFor='let civilite of civilites'>{{civilite}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col">
+            <input formControlName="name" class="form-control form-control-sm" type="text" placeholder="Nom" required />
+            <div class="error" [hidden]=" bookingForm.value.name !='' ">*</div>
+          </div>
+          <div class="col">
+            <input formControlName="firstname" class="form-control form-control-sm" type="text" placeholder="Prénom"
+              required />
+            <div class="error" [hidden]=" bookingForm.value.firstname !='' ">*</div>
+          </div>
+        </div>
+
+        <hr class='hr'>
+
+        <div class="form-row">
+          <div class="col">
+            <input formControlName="mail" class="form-control form-control-sm" type="text" placeholder="Mail" required />
+            <div class="error" [hidden]=" bookingForm.value.mail !='' ">*</div>
+          </div>
+
+        </div>
+
+        <hr class='hr'>
+
+        <div class="form-row block-address">
+          <div class="col">
+            <input formControlName="address" class="form-control form-control-sm" type="text" placeholder="Adresse"
+              required />
+            <div class="error" [hidden]=" bookingForm.value.address !='' ">*</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <input formControlName="cp" class="form-control form-control-sm" type="text" placeholder="Code postal"
+              required />
+            <div class="error" [hidden]=" bookingForm.value.cp !='' ">*</div>
+          </div>
+          <div class="col">
+            <input formControlName="phone" class="form-control form-control-sm" type="text" placeholder="Téléphone"
+              required />
+            <div class="error" [hidden]=" bookingForm.value.phone !='' ">*</div>
+          </div>
+        </div>
+
+        <div class="text-center block-price">
+          <span class="ok" (click)='submit()'><span class="paiement">Valider</span> <i class="fas fa-arrow-circle-right"></i></span>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</div>

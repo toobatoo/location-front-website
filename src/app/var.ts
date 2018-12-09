@@ -1,0 +1,1 @@
+export const URL_API = 'http://s-chap.fr:8080/location-api';

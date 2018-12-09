@@ -1,0 +1,102 @@
+<div class="container-fluid">
+
+  <div class="row row-navigation">
+    <div class="col-sm-12 col-md-12 col-lg-12 navigation menu">
+      <div class="block-close" (click)='toggleMenu()'>
+        <span><i class="far fa-times-circle"></i></span>
+      </div>
+      <div class="content-link text-center">
+        <div class="link" (click)="link('/disponibilites/0/0')">DISPONIBILITES</div>
+        <div class="link" (click)="link('/photos')">PHOTOS</div>
+        <div class="link" (click)="link('/description')">DESCRIPTION</div>
+        <div class="link" (click)="link('/tarif')">TARIFS</div>
+        <div class="link" (click)='toggleMenu()'>SITUATION</div>
+        <div class="link" (click)="link('/contact')">CONTACT</div>
+      </div>
+    </div>
+  </div>
+  <div class="cover"></div>
+  <div class="row">
+    <div class="col-1 bloc-menu" (click)='toggleMenu()'>
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 content-map">
+      <div class="filter-map">
+        <form #form>
+          <table class="table">
+            <tr>
+              <td class="sb-title">INFORMATIONS LOCALES</td>
+            </tr>
+            <tr>
+              <td class="dots">
+                <input class="txt" type="text" placeholder="DEPART" size="40" name="origin" value={{originGeocode}} />
+              </td>
+            </tr>
+            <tr>
+              <td class="dots">
+                <input class="txt" type="text" placeholder="ARRIVEE" size="40" name="destination" value={{destinationGeocode}} />
+              </td>
+            </tr>
+            <tr>
+              <td class="hr"></td>
+            </tr>
+            <tr>
+              <td class="bloc-btn">
+                <button type="submit" class="btn btn-light btn-sm" (click)='showLocation(form)'>
+                  <i class="fas fa-road"></i> AFFICHER L'ITINERAIRE
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="hr"></td>
+            </tr>
+            <tr>
+              <td class="bloc-btn">
+                <span class="btn btn-light btn-sm" (click)='showPlace()'>
+                  <i class="fas fa-map-marker-alt"></i> AFFICHER LE LIEUX DE L'APPARTEMENT
+                </span>
+              </td>
+            </tr>
+
+          </table>
+        </form>
+      </div>
+
+      <agm-map [latitude]="location.lat" [longitude]="location.lng" [zoom]="zoom" [mapTypeId]="mapTypeId">
+        <agm-marker [latitude]="location.lat" [longitude]="location.lng" [iconUrl]="iconMarker"></agm-marker>
+        <agm-direction [origin]="originCoords" [destination]="destinationCoords" [renderOptions]="renderOptions"></agm-direction>
+      </agm-map>
+    </div>
+  </div>
+
+  <div class="row bloc-bottom">
+    <div class="col-3 bloc-bottom-left">
+      <span class="title-black">BEACH'S</span> <span class="title-gray"> COSY HOME</span>
+    </div>
+    <div class="col-3 bloc-bottom-middle">
+      <div class="address-top">
+        <span class="address-gray">19 RESIDENCE HORIZON MARIN</span>
+      </div>
+      <div>
+        <span class="address-gray">33 680 LACANAU, FRANCE</span>
+      </div>
+    </div>
+    <div class="col-3 bloc-bottom-right">
+      <div class="address-top">
+        <span class="address-gray">
+          <i class="fas fa-phone"></i>
+          07.60.03.76.72
+        </span>
+      </div>
+      <div>
+        <span class="address-gray">
+          <i class="fas fa-at"></i>
+          sebastien.chappert@hotmail.fr
+        </span>
+      </div>
+    </div>
+  </div>
+
+</div>

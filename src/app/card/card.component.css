@@ -1,0 +1,40 @@
+.card{
+    width: 15rem;
+    height: 20rem;
+    border-radius: 5px;
+    background: #76247e;
+    text-align: center;
+    color: white;
+    font-family: 'OpenSans-Light';
+    -moz-box-shadow: 7px 7px 12px 0px #9b9b9b;
+    -webkit-box-shadow: 7px 7px 12px 0px #9b9b9b;
+    -o-box-shadow: 7px 7px 12px 0px #9b9b9b;
+    box-shadow: 7px 7px 12px 0px #9b9b9b;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#9b9b9b, Direction=135, Strength=12);
+   letter-spacing: 2px;
+   transition: all .2s ease-in-out;
+}
+.card:hover {
+     transform: scale(1.1);
+}
+
+.month{
+    margin-top: 20px;
+    font-size: 1rem;
+}
+.price{
+    margin-top: 30px;
+    font-size: 3rem;
+}
+.detail{
+    margin-top: 30px;
+    font-size: .6rem;
+}
+.button{
+    margin-top: 50px;
+    font-size: .6rem;
+}
+.btn{
+    font-size: 1rem;
+    
+}
