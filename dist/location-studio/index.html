@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>LocationStudio</title>
+  <base href="/location-studio">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="location-studio/favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="location-studio/assets/mobile-v.css">
+  <link rel="stylesheet" href="location-studio/styles.f86f246f17d7ee657d09.css">
+</head>
+
+<body>
+  <div class="mobile-v">
+    VERSION MOBILE
+    <span><i class="fas fa-chevron-circle-right"></i></span>
+  </div>
+  <app-root></app-root>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+  <script>
+    $(document).ready(function () {
+      if ($(window).width() <= 600) {
+        window.location = "http://studio.s-chap.fr/std-mobile/";
+      }
+      $('.mobile-v').click(function () {
+        window.location = "http://studio.s-chap.fr/std-mobile/";
+      });
+    });
+  </script>
+  <script type="text/javascript" src="location-studio/runtime.ec2944dd8b20ec099bf3.js"></script>
+  <script type="text/javascript" src="location-studio/polyfills.c6871e56cb80756a5498.js"></script>
+  <script type="text/javascript" src="location-studio/main.a81434d64fbc917cbaf6.js"></script>
+</body>
+
+</html>
